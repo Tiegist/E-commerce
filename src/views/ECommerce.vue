@@ -22,18 +22,16 @@
                 </div>
               </div>
             </div>
-          </div>
-
-          
-          <div class="mt-40 relative ">
-          <button @click="prevImage" class="pi pi-chevron-left absolute  top-1/4  left-0 transform -translate-y-1/2 text-white text-xl"></button>
+          </div> 
+          <div class="mt-40 relative block md:hidden">
+          <button @click="prevImage" class="pi pi-chevron-left absolute  top-1/4 left-0 transform -translate-y-1/2 text-white text-xl"></button>
           <img v-if="item.gallery.length > 0" :src="item.gallery[currentIndex]" alt="" class=" h-64   -mt-28">
           <button @click="nextImage" class="pi pi-chevron-right absolute  mt-32  transform -translate-y-1/2 text-white text-xl"></button>
         </div>
           <div v-for="(title, index) in item.titles" :key="index" class="mb-32 bg-zinc-400 -mt-28 ml-6 w-screen flex relative mr-2 rounded-md block md:hidden">
             <p class=" text-balance  w-64 text-center mt-4 ml-20">{{ title }}</p>
             <div v-for="(image, imgindex) in item.images.slice(index * 2, index * 2 + 2)" :key="imgindex" class=" mr-6 -ml-20  rounded-md">
-              <div class="bg-white mt-16 -ml-8 mr-20 w-40">
+              <div class="bg-white mt-16 -ml-8 mb-2 mr-20 w-40">
                 <img :src="image" alt="" class=" w-40 h-40 p-4  ">
                 <div class=" flex  w-28  pb-2 ml-6">
                   <p class="  text-center align-text-bottom">{{ item.prices[index * 2 + imgindex] }}</p>
