@@ -3,7 +3,22 @@
 <div class="lg:mt-16 lg:font-serif mt-20 font-serif">
    <SideBar class="lg:mt-5 mt-5"/>
    <div class="lg:ml-64 lg:flex lg:text-white lg:-mt-5 ml-5 text-white">
- <div class="flex bg-zinc-500 mr-4 p-3">
+
+    <div class="lg:mt-10 -mt-2 hidden sm:block">
+        <div v-for="(image, index) in images" :key="index" class="lg:w-32 w-32 lg:flex lg:flex-col">
+        <img :src="image" @click="changeImage(index)" alt="" class="lg:w-20 lg:h-24 lg:mb-3 lg:rounded-lg w-20 h-20 mb-3 rounded-lg">
+    </div>
+    </div>
+    <div class=" lg:text-center lg:bg-transparent lg:mr-32 lg:w-2/3 lg:mt-20 lg:ml-6 lg:h-96 bg-white text-center w-40 mt-5 h-40 hidden sm:block">
+    <img v-if="images.length >0" :src="images[imageIndex]" alt="" class="lg:h-96 lg:w-96">
+    <div class=" block md:hidden">
+        <p class="text-md w-56 text-center -ml-10 mt-4">Women's Metallic Shiny Maxi Skirts Lightweight Silky Flowy Skirt for Summer Beach Holiday</p>
+        <p class="mt-4">price: $11.49 - $24.99</p>
+    </div>
+    </div>
+
+
+ <div class="flex bg-zinc-500 mr-4 p-3 block md:hidden">
     <div class="lg:mt-10 -mt-2">
         <div v-for="(image, index) in images" :key="index" class="lg:w-32 w-32 lg:flex lg:flex-col">
         <img :src="image" @click="changeImage(index)" alt="" class="lg:w-20 lg:h-24 lg:mb-3 lg:rounded-lg w-20 h-20 mb-3 rounded-lg">
@@ -17,6 +32,8 @@
     </div>
     </div>
  </div>
+
+
     <div>
 <div class="lg:mr-56 lg:mt-14 lg:ml-4 hidden sm:block">
     <p class="lg:text-xl">Women's Metallic Shiny Maxi Skirts Lightweight Silky Flowy Skirt for Summer Beach Holiday</p>

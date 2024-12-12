@@ -2,8 +2,24 @@
     <NavBar  class="fixed"/>
 <div class="lg:mt-16 lg:font-serif mt-20 font-serif">
    <SideBar class="lg:mt-5"/>
-   <div class="lg:ml-64 lg:flex lg:text-white text-white lg:-mt-5">
-<div class="flex bg-zinc-500 p-3">
+   <div class="lg:ml-64 lg:flex lg:text-white text-white lg:-mt-5 ">
+
+    <div class="lg:mt-20 hidden sm:block">
+        <div v-for="(image, index) in images" :key="index" class="lg:w-32 lg:flex lg:flex-col">
+        <img :src="image" @click="changeImage(index)" alt="" class="lg:w-20 lg:mb-3 lg:rounded-lg w-20 mb-3 rounded-lg">
+    </div>
+    </div>
+    <div class="lg:text-center lg:mr-16 lg:-mt-16 lg:-ml-10 hidden sm:block">
+    <img v-if="images.length >0" :src="images[imageIndex]" alt="" class="lg:pt-20 w-56 lg:w-full ml-10 mt-10 ">
+    <div class="block md:hidden text-white">
+        <p class="lg:text-xl text-lg text-center w-56 ml-10">adidas Men's X_PLR Path Sneaker</p>
+        <p class="ml-16 mt-4">price: $32.48 - $49.99</p>
+    </div>
+    </div>
+
+
+
+<div class="flex bg-zinc-500 p-3 block md:hidden">
     <div class="lg:mt-20">
         <div v-for="(image, index) in images" :key="index" class="lg:w-32 lg:flex lg:flex-col">
         <img :src="image" @click="changeImage(index)" alt="" class="lg:w-20 lg:mb-3 lg:rounded-lg w-20 mb-3 rounded-lg">
@@ -17,6 +33,8 @@
     </div>
     </div>
 </div>
+
+
     <div>
 <div class="lg:mr-56 lg:mt-14 hidden sm:block">
     <p class="lg:text-xl">adidas Men's X_PLR Path Sneaker</p>
